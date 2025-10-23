@@ -3,7 +3,7 @@ import {RadioGroup, Radio} from "@heroui/radio";
 import {Card, CardHeader, CardBody, CardFooter} from "@heroui/card";
 import { Button } from "@heroui/button";
 import Image from "next/image";
-import sneakerData from "@/data/sneakers.json" 
+import sneakerData from "../data/sneakers.json" 
 
 interface SneakerProduct {
     id: number;

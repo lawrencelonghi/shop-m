@@ -2,8 +2,15 @@
   {
     "id": 1,
     "title": "Black Sneaker",
-    "description": "High tech sneaker ultra comfortble and ultra versatyle",
+    "description": "High tech sneaker ultra comfortble and ultra versatile",
     "price": "$350.00",
     "img": "/images/shoes/blackSneaker.png"
+  },
+    {
+    "id": 2,
+    "title": "New Sneaker",
+    "description": "High tech sneaker ultra comfortble and ultra versatile",
+    "price": "$300.00",
+    "img": "/images/shoes/whiteSneaker.png"
   }
 ]
