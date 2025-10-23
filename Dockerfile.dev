@@ -1,0 +1,23 @@
+# Dockerfile para Desenvolvimento (com Hot Reload)
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Instalar dependências do sistema
+RUN apk add --no-cache libc6-compat
+
+# Copiar arquivos de dependências
+COPY package.json package-lock.json* ./
+
+# Instalar dependências
+RUN npm ci
+
+# Copiar código fonte
+COPY . .
+
+# Expor porta
+EXPOSE 3000
+
+# Comando de desenvolvimento com Turbopack
+CMD ["npm", "run", "dev"]

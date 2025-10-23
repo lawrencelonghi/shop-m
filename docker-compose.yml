@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Desenvolvimento
+  nextjs-dev:
+    container_name: nextjs-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    restart: unless-stopped
+    profiles:
+      - dev
+
+  # Produção
+  nextjs-prod:
+    container_name: nextjs-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    profiles:
+      - prod
